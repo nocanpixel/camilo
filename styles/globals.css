@@ -1,12 +1,29 @@
 :root {
   /* Your default theme */
   --background: white;
-  --foreground: black;
+  --foreground: rgb(53, 53, 53);
+  --section__skill: #f9f9f9;
+  
+  --baw: rgb(53,53,53);
+
+  /* Side nav */
+  --sd__background: #1D262F;
+  --sd__color: #fafafafa;
+  
 }
 
 [data-theme='dark'] {
-  --background: black;
-  --foreground: white;
+  --background: #161b22;
+  --foreground: #0EC786;
+  --section__skill: #0F1217;
+
+  --baw : #fafafafa;
+
+
+  /* Side nav  */
+
+  --sd__background: #1D262F;
+  --sd__color: #0EC786;
 }
 
 html,
@@ -16,6 +33,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: var(--background);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 
 a {
