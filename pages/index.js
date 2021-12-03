@@ -4,34 +4,30 @@ import styles from "../styles/Home.module.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import duotoneSea from "react-syntax-highlighter/dist/cjs/styles/prism/duotone-sea";
 import Particles from "react-tsparticles";
-import IconButton from "@mui/material/IconButton";
+
 import funky from "react-syntax-highlighter/dist/esm/styles/prism/funky";
 import Link from "next/link";
 
-//ICONS
-import LightModeIcon from '@mui/icons-material/LightMode';
-import Brightness2Icon from "@mui/icons-material/Brightness2";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import { useEffect, useState } from "react";
+import Navbar from "./components/navbar/Navbar";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [loaded, setLoaded] = useState(false);
   useEffect(() => setLoaded(true), []);
 
-  const codeString = `
-  export default function Introduction(){  
+const codeString = `export default function Introduction(){  
     return (
       <>
       <span>
       Computer engineer and web developer
       </span>   
       </>
-      )
-  } 
-  `;
+)}`;
   const ParticlesSettings = (props) => {
     return (
       <Particles
@@ -48,7 +44,7 @@ export default function Home() {
                 enable: true,
                 mode: "repulse",
               },
-              resize: false,
+              resize: true,
             },
             modes: {
               bubble: {
@@ -154,69 +150,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.nav__bar}>
-        {theme === "light" && loaded ? (
-          <>
-            <Link href="/">
-              <a
-                style={{
-                  color: "var(--sd__color)",
-                  fontSize: "1.5em",
-                  fontWeight: "bold",
-                  fontFamily: "consolas",
-                  paddingTop: 20,
-                }}
-              >
-                {" [*] "}
-              </a>
-            </Link>
-            <IconButton onClick={() => setTheme("dark")}>
-              <Brightness2Icon
-                alt="dark"
-                style={{
-                  color: "var(--sd__color)",
-                  fontSize: "1.2rem",
-                  transform: "scalex(-1)",
-                }}
-              />
-            </IconButton>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a
-                style={{
-                  color: "var(--sd__color)",
-                  fontSize: "1.5em",
-                  fontWeight: "bold",
-                  fontFamily: "consolas",
-                  paddingTop: 20,
-                }}
-              >
-                {" [>] "}
-              </a>
-            </Link>
-            <IconButton onClick={() => setTheme("light")}>
-              <LightModeIcon
-                alt="light"
-                style={{
-                  color: "var(--sd__color)",
-                  fontSize: "1.2rem",
-                }}
-              />
-            </IconButton>
-          </>
-        )}
-      </div>
-
+      {/* NAVBAR HERE */}
+      <Navbar loaded={loaded} theme={theme} setTheme={setTheme} />
+      <div className={styles.containerAll}>
       <main className={styles.main}>
         <span className={styles.aboveTitle}>Hello!</span>
 
         <h1 className={styles.title}>
-          <span className={styles.consoleText}>{`C:/Users/JuanCamilo> `}</span>I
-          am{" "}
+          <span className={styles.consoleText}>{`C:/Users/JuanCamilo>`}</span>
+          npm run {''}
           <a href="#">
-            Juan Camilo
+            portfolio_juancamilo.js
             <span
               className={styles.hidden}
               id="console__underscore"
@@ -259,8 +203,10 @@ export default function Home() {
           </>
         )}
       </main>
+      </div>
+      <div className={styles.section__skill}>
 
-      <div className={styles.section__skill}>Something</div>
+      </div>
     </div>
   );
 }
