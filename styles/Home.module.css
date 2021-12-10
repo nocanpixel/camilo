@@ -7,18 +7,18 @@
 
 .nav__bar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 3rem;
-  height: 100vh;
+  width: 100%;
+  height: 3.2em;
   position: fixed;
   background-color: var(--sd__background);
   z-index: 100;
-  display: none;
 }
 
 /* END NAV__BAR */
+
 
 .containerAll {
   margin: auto;
@@ -159,6 +159,147 @@
   color: var(--baw);
 }
 
+/*
+Skill section
+*/
+
+.section__introduction {
+  background-color: var(--section__skill);
+  font-family: 'Inconsolata', monospace;
+}
+
+.section__skills {
+  color: var(--when);
+  font-family: 'Inconsolata', monospace;
+  background-color: #0EC786;
+  padding-bottom: 15em;
+}
+
+.text__container{
+  padding-left: 4rem;
+}
+
+.quotes {
+  quotes: "<<" ">>";
+  color: #0EC786;
+}
+
+.image {
+  position: relative;
+}
+
+.custom__bg {
+  padding: 0.8rem;
+  width: 70%;
+  background: #000;
+  color: white;
+}
+
+.tec__container{
+  display: grid;
+  grid-template-columns: auto;
+  background-color: black;
+  padding: 20px;
+}
+.tec__items {
+  border: 2px solid white;
+  padding: 20px;
+  margin: 2px;
+  text-align: center;
+}
+.beautyDnd{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+/* PROJECTS SECTION */
+
+.section__projects {
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--when);
+}
+
+.projects__container {
+  color: white;
+  width: 74%;
+  margin-top: -10em;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: url("/lava2.jpg");
+  padding: 20px;
+  box-shadow: 2px 5px 5px 0 rgb(1 1 1 / 50%), 0 0 0 0 #000000;
+}
+
+.card__grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.projects__container .section__cards{
+  position: relative;
+	width: 90%;
+	height: 400px;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 10;
+  margin-top: 2em;
+
+}
+
+.projects__container .section__cards .card__content{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+}
+
+.projects__container .section__cards:hover .card__content{
+  transform: translateY(-20px);
+}
+
+.projects__container .section__cards .card__content .imgBx .next__img {
+  width: 120%;
+  top: -50%;
+  position: absolute;
+}
+
+.imgBx{
+  display: flex;
+  justify-content: center;
+}
+
+.projects__container .section__cards .card__content .contentBx {
+  color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: 20px 0 10px;
+	line-height: 1.1em;
+}
+
+.description__projects{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.section__cards:hover .description__projects{
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   
   .containerAll{
@@ -202,14 +343,36 @@
     color: white;
     font-size: 2em;
   }
-}
 
+  .text__container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .beautyDnd{
+    display: grid;
+    grid-template-columns: auto;
+    height: 100%;
+  }
 
-/*
-Skill section
-*/
+  .card__grid {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .projects__container {
+    color: white;
+    width: 84%;
+    margin-top: -10em;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #000000;
+    box-shadow: 2px 5px 5px 0 rgb(1 1 1 / 50%), 0 0 0 0 #000000;
+  }
+  .projects__container .section__cards{
+    width: 100%;  
+  }
 
-.section__skill {
-  padding-left: 5rem;
-  background-color: var(--section__skill);
+  .projects__container {
+    margin-top: -5em;
+  }
+  
 }

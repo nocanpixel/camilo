@@ -4,23 +4,25 @@ import styles from "../styles/Home.module.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import duotoneSea from "react-syntax-highlighter/dist/cjs/styles/prism/duotone-sea";
 import Particles from "react-tsparticles";
-
 import funky from "react-syntax-highlighter/dist/esm/styles/prism/funky";
 import Link from "next/link";
 
-
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
+import Introduction from "./components/sections/Introduction";
+import Skills from "./components/sections/Skills";
+import Projects from "./components/sections/Projects";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [loaded, setLoaded] = useState(false);
   useEffect(() => setLoaded(true), []);
 
-const codeString = `export default function Introduction(){  
+  const codeString = `export default function Introduction(){  
     return (
       <>
       <span>
@@ -153,59 +155,56 @@ const codeString = `export default function Introduction(){
       {/* NAVBAR HERE */}
       <Navbar loaded={loaded} theme={theme} setTheme={setTheme} />
       <div className={styles.containerAll}>
-      <main className={styles.main}>
-        <span className={styles.aboveTitle}>Hello!</span>
+        <main id="home" className={styles.main}>
+          <span className={styles.aboveTitle}>Hello!</span>
 
-        <h1 className={styles.title}>
-          <span className={styles.consoleText}>{`C:/Users/JuanCamilo>`}</span>
-          npm run {''}
-          <a href="#">
-            portfolio_juancamilo.js
-            <span
-              className={styles.hidden}
-              id="console__underscore"
-            >
-              &#95;
-            </span>
-          </a>
-        </h1>
-        {theme === "light" && loaded ? (
-          <>
-          <HighlighterTheme styleTheme={funky} />
-          <div className={styles.socialMedia}>
-              <Link href="/">
-                <a alt="Instagram">
-                  <InstagramIcon />
-                </a>
-              </Link>
-              <Link href="/">
-                <a alt="Linkedin">
-                  <LinkedInIcon />
-                </a>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <>
-            <HighlighterTheme styleTheme={duotoneSea} />
-            <div className={styles.socialMedia}>
-              <Link href="/">
-                <a alt="Instagram">
-                  <InstagramIcon />
-                </a>
-              </Link>
-              <Link href="/">
-                <a alt="Linkedin">
-                  <LinkedInIcon />
-                </a>
-              </Link>
-            </div>
-          </>
-        )}
-      </main>
+          <h1 className={styles.title}>
+            <span className={styles.consoleText}>{`C:/Users/JuanCamilo>`}</span>
+            npm run {''}
+            <a href="#">
+              portfolio_juancamilo.js
+              <span
+                className={styles.hidden}
+                id="console__underscore"
+              >
+                &#95;
+              </span>
+            </a>
+          </h1>
+          {loaded && (
+            <>
+
+              <HighlighterTheme styleTheme={duotoneSea} />
+              <div className={styles.socialMedia}>
+                <Link href="https://www.instagram.com/juanca_milo14/">
+                  <a target="_blank" alt="Instagram">
+                    <InstagramIcon />
+                  </a>
+                </Link>
+                <Link href="https://www.linkedin.com/in/juan-camilo-carre%C3%B1o-bele%C3%B1o-290a37177">
+                  <a target="_blank" alt="Linkedin">
+                    <LinkedInIcon />
+                  </a>
+                </Link>
+                <Link href="mailto:juancamilocb96@gmail.com">
+                  <a target="_blank" alt="Email">
+                    <MailOutlineIcon />
+                  </a>
+                </Link>
+              </div>
+            </>
+          )}
+        </main>
       </div>
-      <div className={styles.section__skill}>
 
+      <div className={styles.section__introduction}>
+        <Introduction theme={theme} styles={styles} />
+      </div>
+      <div id="skills" className={styles.section__skills}>
+        <Skills loaded={loaded} styles={styles} />
+      </div>
+      <div className={styles.section__projects}>
+        <Projects loaded={loaded} styles={styles} />
       </div>
     </div>
   );
