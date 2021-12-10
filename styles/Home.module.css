@@ -13,8 +13,15 @@
   width: 100%;
   height: 3.2em;
   position: fixed;
-  background-color: var(--sd__background);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--sd__shadow);
   z-index: 100;
+}
+
+.button__container{
+  background-color: var(--when);
+  border-radius: 50%;
+  margin: 10px;
 }
 
 /* END NAV__BAR */
@@ -137,15 +144,6 @@
   line-height: 1.5;
 }
 
-.logo {
-  display: none;
-}
-
-.logoXl {
-  font-family: 'Inconsolata', monospace;
-  font-size: 1.5em;
-  color: white;
-}
 
 .socialMedia{
   display: flex;
@@ -329,19 +327,16 @@ Skill section
     height: 3rem;
     justify-content: space-between;
     position: fixed;
-    background-color: var(--sd__background);
     z-index: 100;
   }
 
-  .logoXl {
-    display: none;
-  }
+
 
   .logo{
-    display: block;
+    cursor: pointer;
     font-family: 'Inconsolata', monospace;
     color: white;
-    font-size: 2em;
+    font-size: 1.2em;
   }
 
   .text__container{

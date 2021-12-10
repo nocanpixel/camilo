@@ -43,6 +43,7 @@ export default function Navbar({ loaded, theme, setTheme }) {
     <div className={styles.nav__bar}>
       {theme === "light" && loaded ? (
         <>
+        <div className={styles.button__container}>
           <IconButton onClick={() => setTheme("dark")}>
             <Brightness2Icon
               alt="dark"
@@ -53,14 +54,17 @@ export default function Navbar({ loaded, theme, setTheme }) {
               }}
             />
           </IconButton>
+          </div>
           <div className={styles.logo}>
             <span onClick={() => handleToggle()} >{'{>}'}</span>
           </div>
+          <div className={styles.button__container}>
           <IconButton
             onClick={handleClick}
           >
             <MoreVertIcon sx={{ color: 'var(--sd__color)' }} />
           </IconButton>
+          </div>
           <Menu
             styles={{ color: 'red' }}
             id="long-menu"
@@ -101,6 +105,7 @@ export default function Navbar({ loaded, theme, setTheme }) {
         </>
       ) : (
         <>
+        <div className={styles.button__container}>
           <IconButton onClick={() => setTheme("light")}>
             <LightModeIcon
               alt="light"
@@ -110,14 +115,17 @@ export default function Navbar({ loaded, theme, setTheme }) {
               }}
             />
           </IconButton>
+          </div>
           <div className={styles.logo}>
             <span onClick={() => handleToggle()}>{'{>}'}</span>
           </div>
+          <div className={styles.button__container}>
           <IconButton
             onClick={handleClick}
           >
             <MoreVertIcon sx={{ color: 'var(--sd__color)' }} />
           </IconButton>
+          </div>
           <Menu
             styles={{ color: 'red' }}
             id="long-menu"

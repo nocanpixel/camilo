@@ -3,6 +3,7 @@
   --background: white;
   --foreground: rgb(53, 53, 53);
   --section__skill: #e7e7e7;
+  --section__skill__bg: #0EC786;
 
   --when: white;
 
@@ -10,13 +11,16 @@
 
   /* Side nav */
   --sd__background: #1D262F;
-  --sd__color: #fafafafa;
+  --sd__color: black;
+  --sd__shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  
   
 }
 
 [data-theme='dark'] {
-  --background: #161b22;
+  --background: #000000;
   --foreground: #0EC786;
+  --section__skill__bg: #0cb97c;
   --section__skill: #0F1217;
 
   --when: black;
@@ -27,7 +31,9 @@
   /* Side nav  */
 
   --sd__background: #1D262F;
-  --sd__color: #0EC786;
+  --sd__color: white;
+  --sd__shadow: 0 2px 4px 0 rgba(255,255,255,.2);
+  
 }
 
 html,
@@ -36,7 +42,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: var(--section__skill);
+    background-color: var(--background);
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
