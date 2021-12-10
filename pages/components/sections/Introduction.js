@@ -1,7 +1,6 @@
-import Image from 'next/image';
-import { Background, Parallax } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 
-export default function Skills({ styles, theme }) {
+export default function Skills({ styles}) {
     return (
         <>
             <Parallax

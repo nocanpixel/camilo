@@ -22,37 +22,38 @@ export default function Projects({ loaded, styles }) {
         {
             companyName: 'Colnodo',
             img: '/colnodo.png',
-            url:'https://nocanpixel.github.io/thirdchallenge/',
+            url: 'https://nocanpixel.github.io/thirdchallenge/',
             description: `Getting a scholarship from Colnodo, which had a program sponsored by Google. I lead a team creating a functioning website for a restaurant.`,
         }
     ]
     return (
         <div className={styles.projects__container}>
-            <div style={{ width: '40%', margin: 'auto',textAlign:'center' }} className={styles.text__projects}>
+            <div style={{ width: '40%', margin: 'auto', textAlign: 'center' }} className={styles.text__projects}>
                 <h2>My Recent Work</h2>
-                <p>Here are a few design projects I{"'"}ve worked on recently. <span style={{color:'#0EC786'}}><Link href="mailto:juancamilocb96@gmail.com"><a>Email me</a></Link></span> to see more.</p>
+                <p>Here are a few design projects I{"'"}ve worked on recently. <span style={{ color: '#0EC786' }}><Link href="mailto:juancamilocb96@gmail.com"><a>Email me</a></Link></span> to see more.</p>
             </div>
             <div className={styles.card__grid}>
-            {projects.map((ele,index) => {
-                return (
-                    <Link key={ele.index} href={`${ele.url}`}>
-                    <a target="_blank" alt="Url data">
-                        <div  className={styles.section__cards}>
-                            <div className={styles.card__projects}>
-                                <div className={styles.card__content}>
-                                    <div className={styles.contentBx}>
-                                        <h3>{ele.companyName}</h3>
+                {projects.map((ele, index) => {
+                    return (
+
+                        <div key={index} className={styles.section__cards}>
+                            <Link href={`${ele.url}`}>
+                                <a target="_blank" alt="Url data">
+                                    <div className={styles.card__projects}>
+                                        <div className={styles.card__content}>
+                                            <div className={styles.contentBx}>
+                                                <h3>{ele.companyName}</h3>
+                                            </div>
+                                            <div style={{ textAlign: 'center', width: '90%' }} className={styles.imgBx}>
+                                                <p className={styles.description__projects} style={{ fontWeight: 'lighter', fontSize: '0.9em' }}>{`${ele.description}`}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div style={{textAlign:'center',width:'90%'}} className={styles.imgBx}>
-                                    <p className={styles.description__projects} style={{fontWeight:'lighter',fontSize:'0.9em'}}>{`${ele.description}`}</p>  
-                                    </div>
-                                </div>
-                            </div>
+                                </a>
+                            </Link>
                         </div>
-                        </a>
-                        </Link>
-                )
-            })}
+                    )
+                })}
             </div>
         </div>
     );
