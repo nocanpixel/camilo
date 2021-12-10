@@ -12,10 +12,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 import { useEffect, useState } from "react";
-import Navbar from "./components/navbar/Navbar";
-import Introduction from "./components/sections/Introduction";
-import Skills from "./components/sections/Skills";
-import Projects from "./components/sections/Projects";
+import Navbar from "../components/navbar/Navbar";
+import Introduction from "../components/sections/Introduction";
+import Skills from "../components/sections/Skills";
+import Projects from "../components/sections/Projects";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();

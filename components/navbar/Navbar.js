@@ -1,4 +1,4 @@
-import styles from '../../../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 //import Link from 'next/link';
 import { Link, animateScroll as scroll } from 'react-scroll';
