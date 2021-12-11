@@ -28,7 +28,7 @@ export default function Projects({ loaded, styles }) {
     return (
         <div className={styles.projects__container}>
             <div style={{ width: '40%', margin: 'auto', textAlign: 'center' }} className={styles.text__projects}>
-                <h2>My Recent Work</h2>
+                <h2>My recent work</h2>
                 <p>Here are a few design projects I{"'"}ve worked on recently. <span style={{ color: '#0EC786' }}><Link href="mailto:juancamilocb96@gmail.com"><a>Email me</a></Link></span> to see more.</p>
             </div>
             <div className={styles.card__grid}>

@@ -144,7 +144,6 @@ export default function Navbar({ loaded, theme, setTheme }) {
               },
             }}
           >
-
             {sections.map((elem) => {
               return (
                 <NavLinks activeClass={'active'}  spy={true} exact='true' offset={-48.5} smooth={true} key={elem.id} to={elem.url}>
@@ -161,7 +160,6 @@ export default function Navbar({ loaded, theme, setTheme }) {
                 </NavLinks>
               )
             })}
-
           </Menu>
         </>
       )}

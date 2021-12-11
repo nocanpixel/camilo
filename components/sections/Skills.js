@@ -83,8 +83,8 @@ export default function Skills({ styles, loaded }) {
         let color = '#';
       
         for (i = 0; i < 3; i += 1) {
-          const value = (hash >> (i * 8)) & 0xff;
-          color += `00${value.toString(16)}`.substr(-2);
+          const value = (hash >> (i * 2)) & 0xff;
+          color += `00${value.toString(12)}`.substr(-2);
         }
         /* eslint-enable no-bitwise */
       
@@ -96,7 +96,7 @@ export default function Skills({ styles, loaded }) {
           sx: {
             bgcolor: stringToColor(name),
           },
-          children: `${name.charAt(0)}`,
+          children: `${name.charAt()}`,
         };
       }
     return (
