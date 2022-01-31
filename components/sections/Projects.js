@@ -8,9 +8,10 @@ export default function Projects({ loaded, styles }) {
             description: `In charge of developing a responsive website for the Internet service provider, Atti, using; HTML, CSS, JavaScript, JQuery, SQL.`,
         },
         {
-            companyName: 'Ani',
+            companyName: 'Platform',
             img: '/anilogo.gif',
-            description: `Building and designing the user module systems for the user management company, ANI, and generating receipts to show payment details.`,
+            url: 'https://nocanpixel.github.io/venturitchall/',
+            description: `A fun challange giving by a company to replicate an image of their website.`,
         },
         {
             companyName: 'MyPelis',
